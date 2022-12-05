@@ -1,5 +1,5 @@
 export default function PostList() {
-  const testPostList = [
+  const testPostListArray = [
     {
       sumnail: "",
       title: "testtitle1",
@@ -32,17 +32,15 @@ export default function PostList() {
     },
   ];
 
-  testPostList.map((test) => console.log(test.title));
-
   return (
     <section className="postlist_layout">
-      <h2>postList</h2>
       <div className="mainpost_layout">
-        {testPostList.map((mainpost) => (
-          <div>
-            <img src="#" alt="sumnuil" />
+        {testPostListArray.map((mainpost) => (
+          <div className="mainpost_content">
+            <img src="/img/logo.png" alt="sumnuil" />
             <p>{mainpost.title}</p>
-            <p>{mainpost.content}</p>
+            <hr />
+            <span>{mainpost.content}</span>
           </div>
         ))}
       </div>

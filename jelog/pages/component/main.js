@@ -3,7 +3,7 @@ import PostList from "./postlist";
 
 export default function Main() {
   return (
-    <div>
+    <div className="main_back_layout">
       <section className="main_layout">
         <TitleList />
         <PostList />

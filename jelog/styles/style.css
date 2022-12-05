@@ -1,6 +1,7 @@
 html,
 body {
   margin: 0px;
+  background-color: rgb(231, 231, 231);
 }
 
 .flex_row {
@@ -26,14 +27,32 @@ body {
   background-color: #777;
 }
 
-.nav_dropbox {
-  border-color: bisque;
-  border: 1px;
-  border-style: dashed;
+/* 드롭박스 구현 수정 */
+.nav_dropbox:hover .nav_dropbox > div {
+  display: block;
+}
+
+.nav_dropbox_title {
+  text-align: center;
+}
+
+.nav_dropbox > div {
+  position: absolute;
+  margin-bottom: 5px;
+}
+
+.nav_dropbox > div > a {
+  display: none;
 }
 
 .hidden {
   display: hidden;
+}
+
+.main_back_layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main_layout {
@@ -44,10 +63,13 @@ body {
 }
 
 .titlelist_layout {
-  width: 250px;
-  height: 500px;
-  border-style: solid;
+  width: 550px;
+  background-color: white;
   border-radius: 15px;
+}
+
+.titleList_title {
+  display: block;
 }
 
 .postlist_layout {
@@ -63,6 +85,25 @@ body {
 .mainpost_layout > div {
   margin: 10px;
   width: 30%;
+}
+
+.mainpost_content {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.mainpost_content > img {
+  border-radius: 5px;
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+.mainpost_content > hr {
+  margin: 5px;
+  color: black;
 }
 
 .copylight_layout {
