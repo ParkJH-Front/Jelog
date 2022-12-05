@@ -1,10 +1,10 @@
-import Nav from "./component/nav.js";
-
+import Nav from "./component/nav";
+import Main from "./component/main";
 export default function Home() {
   return (
     <div>
       <Nav />
-      <p>hi</p>
+      <Main />
     </div>
   );
 }

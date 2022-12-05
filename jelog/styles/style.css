@@ -1,0 +1,70 @@
+html,
+body {
+  margin: 0px;
+}
+
+.flex_row {
+  display: flex;
+}
+
+.flex_row > div {
+  margin-left: 10px;
+}
+
+.nav_layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav_title {
+  font-size: large;
+  color: white;
+}
+
+.nav_background {
+  background-color: #777;
+}
+
+.nav_dropbox {
+  border-color: bisque;
+  border: 1px;
+  border-style: dashed;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.main_layout {
+  width: 1000px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.titlelist_layout {
+  width: 250px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.postlist_layout {
+  margin-left: 30px;
+}
+
+.mainpost_layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mainpost_layout > div {
+  margin: 10px;
+  width: 30%;
+}
+
+.copylight_layout {
+  text-align: center;
+}
