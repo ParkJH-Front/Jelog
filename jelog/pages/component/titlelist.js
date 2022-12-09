@@ -13,7 +13,7 @@ export default function TitleList() {
     <section className="titlelist_layout">
       <h1>title</h1>
       {titleListArray.map((title) => (
-        <a className="titleList_title">title.title</a>
+        <a className="titleList_title">{title.title}</a>
       ))}
     </section>
   );
