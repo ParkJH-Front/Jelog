@@ -1,31 +1,42 @@
 import React, { useRef, useState } from "react";
-
+import stlye from "./style/editor.module.css";
 export default function editor() {
-  const [text, setText] = useState("");
-  const [lineText, setLineText] = useState([]);
-  const [lineTag, setLineTag] = useState([]);
-  const [lineClass, setLineClass] = useState([]);
+  const [text, setText] = useState([]);
 
   const onInput = (e) => {
-    // console.dir(e.target.children); // 자식 요소들을 가지고 올 수 있음.
-  //   setLineText(e.target.children[1]?.innerText);
-  //   setLineTag(e.target.children[1]);
-  //   setLineClass(e.target.children[1]?.className);
-
-  //   setText(e.target.innerText);
-  // };
-  // console.log(`내용 : ${lineText} / 태그 : ${lineTag} / 클래스 : ${lineClass}`);
-  // console.log(text);
+    setText(e.target.innerText);
+  };
 
   return (
     <div>
-      <div
-        contentEditable="true" // html 태그를 텍스트 입력 가능하도록 하는 옵션
-        suppressContentEditableWarning // 하위 요소들을 수정 할 수 있다는 경고문을 제거 해줌. (그 외 모든 경고문 제외 가능)
-        onInput={onInput}
-      ></div>
-      <div contentEditable="false" suppressContentEditableWarning>
-        {text}
+      <div>
+        <button>H1</button>
+        <button>H2</button>
+        <button>H3</button>
+        <button>H4</button>
+        <button>굵게</button>
+        <button>기울기</button>
+        <button>가로선</button>
+        <button>코드</button>
+        <button>인용구</button>
+        <button>이미지</button>
+        <button>강조</button>
+      </div>
+      <div className={stlye.flex}>
+        <div className={stlye.editor_box}>
+          <div
+            contentEditable="true"
+            suppressContentEditableWarning
+            onInput={onInput}
+          ></div>
+        </div>
+        <div contentEditable="false" suppressContentEditableWarning>
+          {text}
+        </div>
+      </div>
+      <div>
+        <button>저장</button>
+        <button>HTML로 보기</button>
       </div>
     </div>
   );
