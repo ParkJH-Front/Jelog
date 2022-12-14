@@ -1,0 +1,13 @@
+@font-face {
+  font-family: title_font;
+  src: url(RecipekoreaOTF.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: main_font;
+  src: url(NanumNeoOTF-regulr.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,7 +1,18 @@
 html,
 body {
+  font-family: main_font;
   margin: 0px;
   background-color: rgb(231, 231, 231);
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
 }
 
 .flex_row {
