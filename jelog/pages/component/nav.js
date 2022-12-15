@@ -1,8 +1,20 @@
-import style from "../style/nav.module.css";
+import { useRef } from "react";
 export default function nav() {
-  const lightModeBtn = () => {};
+  const lightbtn = useRef("");
+  const darkbtn = useRef("");
 
-  const darkModeBtn = () => {};
+  const lightModeBtn = () => {
+    colorThemeHander("dark");
+  };
+
+  const darkModeBtn = () => {
+    colorThemeHander("light");
+  };
+
+  const colorThemeHander = (theme) => {
+    document.body.classList = theme;
+  };
+
   return (
     <nav className="nav_background">
       <section className="nav_layout">
@@ -24,7 +36,7 @@ export default function nav() {
             </div>
           </div>
           <div>
-            <button onclick={lightModeBtn} className={style.hidden}>
+            <button ref={lightbtn} onClick={lightModeBtn} className="">
               <svg
                 width="16"
                 height="16"
@@ -42,7 +54,7 @@ export default function nav() {
                 />
               </svg>
             </button>
-            <button onclick={darkModeBtn}>
+            <button ref={darkbtn} onClick={darkModeBtn} className="">
               <svg
                 width="16"
                 height="16"
