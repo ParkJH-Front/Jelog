@@ -1,0 +1,102 @@
+// 블로그 다 만들면 꼭 이거 변경해보자, 직 접 만 든 걸 로
+
+import { useEffect, useState, useRef } from "react";
+import dynamic from "next/dynamic";
+const Quill = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.snow.css";
+
+export default function Editor() {
+  const modules = {
+    toolbar: {
+      container: [
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+        [{ font: [] }],
+        [{ align: [] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [{ list: "ordered" }, { list: "bullet" }, "link"],
+        [
+          {
+            color: [
+              "#000000",
+              "#e60000",
+              "#ff9900",
+              "#ffff00",
+              "#008a00",
+              "#0066cc",
+              "#9933ff",
+              "#ffffff",
+              "#facccc",
+              "#ffebcc",
+              "#ffffcc",
+              "#cce8cc",
+              "#cce0f5",
+              "#ebd6ff",
+              "#bbbbbb",
+              "#f06666",
+              "#ffc266",
+              "#ffff66",
+              "#66b966",
+              "#66a3e0",
+              "#c285ff",
+              "#888888",
+              "#a10000",
+              "#b26b00",
+              "#b2b200",
+              "#006100",
+              "#0047b2",
+              "#6b24b2",
+              "#444444",
+              "#5c0000",
+              "#663d00",
+              "#666600",
+              "#003700",
+              "#002966",
+              "#3d1466",
+              "custom-color",
+            ],
+          },
+          { background: [] },
+        ],
+        ["image", "video"],
+        ["clean"],
+      ],
+    },
+  };
+
+  const [taxt, setText] = useState("");
+  const [htmlToggle, setHtmlToggle] = useState(false);
+  const postContent = (content) => {
+    setText(content);
+  };
+
+  const htmlToggleHandler = () => {
+    setHtmlToggle((htmlToggle) => !htmlToggle);
+  };
+
+  return (
+    <div>
+      <container className="flex_row">
+        <div>
+          <Quill onChange={postContent} modules={modules} />
+          <button>save</button>
+          <button onClick={htmlToggleHandler}>HTML로 보기</button>
+        </div>
+        <div>
+          <div
+            contentEditable="false"
+            suppressContentEditableWarning
+            className={htmlToggle ? "hidden" : ""}
+            dangerouslySetInnerHTML={{ __html: taxt }}
+          ></div>
+          <div
+            contentEditable="false"
+            suppressContentEditableWarning
+            className={htmlToggle ? "" : "hidden"}
+          >
+            {taxt}
+          </div>
+        </div>
+      </container>
+    </div>
+  );
+}
